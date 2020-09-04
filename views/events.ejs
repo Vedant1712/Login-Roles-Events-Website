@@ -46,12 +46,26 @@
 </nav>
     </div>
 
-<div>
+<div class="container" id="abcd" style="margin-top: 5%; border: 5px solid gray; padding: 30px;">
   <% events.forEach(function(post) { %>
-  <h2>  <%= post.title %>  </h2>
+  <h2 style="text-transform: uppercase;">  <%= post.title %>  </h2>
   <p>  <%= post.body %></p>
   <% }); %>
 </div>
+
+<script>
+var anchor = $("li:last-child");
+
+anchor.className += " active";
+
+document.getElementById("abcd").addEventListener("mouseover", function() {
+    document.getElementById("abcd").style.fontSize = "1.3rem";
+});
+
+document.getElementById("abcd").addEventListener("mouseout", function() {
+    document.getElementById("abcd").style.fontSize = "1rem";
+});
+</script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
